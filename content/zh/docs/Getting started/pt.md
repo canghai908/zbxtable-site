@@ -1,9 +1,7 @@
 ---
-title: "基本配置"
-linkTitle: "基本配置"
-weight: 4
-description: >
-  系统关键配置
+title: "111"
+linkTitle: "111"
+weight: 3
 ---
 
 {{% pageinfo %}}
