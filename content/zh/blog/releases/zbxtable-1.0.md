@@ -1,9 +1,9 @@
 ---
-author: sole
+author: "canghai809"
 categories:
   - ZbxTable
 date: 2020-07-24 19:00:32
-title: Zbxtable 1.0发布
+title: "Zbxtable 1.0"
 ---
 
 ## 系统介绍

@@ -1,10 +1,14 @@
 ---
-title: "RPMB部署"
-linkTitle: "RPMB部署"
+title: "RPM部署"
+linkTitle: "RPM部署"
 weight: 5
 description: >
   使用RPM包方式部署ZbxTable
 ---
+
+{{% pageinfo %}}
+推荐添加 Zbxtable 源进行系统的安装及更新
+{{% /pageinfo %}}
 
 由于 ZbxTable 使用 Go 语言编写，无任何系统以来组建，建议使用 RPM 方式进行安装，推荐使用 ZbxTable 的 yum 源，可方便安装各个组件并可使用 yum update 对组件进行更新。
 
