@@ -1,5 +1,5 @@
 ---
 title: "News About ZbxTable"
 linkTitle: "News"
-weight: 20
+weight: 2
 ---

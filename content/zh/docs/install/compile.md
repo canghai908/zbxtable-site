@@ -107,7 +107,7 @@ cp /usr/local/zbxtable/zbxtable.init /etc/init.d/
 centos7 及以上
 
 ```
-cp cp /usr/local/zbxtable/zbxtable.service /lib/systemd/system/
+cp /usr/local/zbxtable/zbxtable.service /lib/systemd/system/
 ```
 
 ### 配置
