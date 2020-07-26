@@ -16,5 +16,5 @@ description: >
 可选择时间段.点查询，即可刷新页面。选择一个或多个主机，点击导出所选主机图形到 PDF 文件
 ![1](https://img.cactifans.com/wp-content/uploads/2020/07/F5475A13-267E-4B9F-809C-529C30063762.png)
 
-选择一个或多个主机，点击导出所选主机图形到 PDF 文件
+最终生成 PDF 文件
 ![1](https://img.cactifans.com/wp-content/uploads/2020/07/0112BB30-A82A-4A8B-BC55-E35BFDEE9AE2.png)
