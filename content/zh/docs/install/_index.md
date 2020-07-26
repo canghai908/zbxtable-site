@@ -1,6 +1,6 @@
 ---
-title: "安装部署"
-linkTitle: "安装部署"
+title: "安装"
+linkTitle: "安装"
 weight: 3
 description: >
   部署ZbxTable

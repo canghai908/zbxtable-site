@@ -1,7 +1,8 @@
 ---
-title: "编译安装"
-linkTitle: "编译安装"
-weight: 6
+title: "RPM部署【推荐】"
+linkTitle: "RPM部署【推荐】"
+weight: 5
+date: 2020-07-24 19:00:32
 description: >
   使用RPM包方式部署ZbxTable
 ---
@@ -14,21 +15,21 @@ description: >
 
 ## 添加 yum 源
 
-CentOS 7.x
+CentOS 6.x x86_64
 
 ```
 rpm -Uvh hhttps://repo.cactifans.com/zbxtable/1.0/rhel/6/x86_64/zbxtable-release-1.0-1.el6.noarch.rpm
 yum clean all
 ```
 
-CentOS 7.x
+CentOS 7.x x86_64
 
 ```
 rpm -Uvh hhttps://repo.cactifans.com/zbxtable/1.0/rhel/7/x86_64/zbxtable-release-1.0-1.el7.noarch.rpm
 yum clean all
 ```
 
-CentOS 8.x
+CentOS 8.x x86_64
 
 ```
 rpm -Uvh hhttps://repo.cactifans.com/zbxtable/1.0/rhel/8/x86_64/zbxtable-release-1.0-1.el8.noarch.rpm

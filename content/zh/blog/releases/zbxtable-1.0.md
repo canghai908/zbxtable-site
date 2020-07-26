@@ -28,6 +28,10 @@ ZbxTable-Web: 使用 React 编写的前端
 
 MS-Agent: 安装在 Zabbix Server 上,用于接收 Zabbix Server 产生的告警，并发送到 ZbxTable 平台
 
+## 文档
+
+[文档](/docs/)
+
 ## 在线体验
 
 直接点击登录即可

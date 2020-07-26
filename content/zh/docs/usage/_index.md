@@ -1,6 +1,6 @@
 ---
-title: "基本配置"
-linkTitle: "基本配置"
+title: "使用"
+linkTitle: "使用"
 weight: 4
 description: >
   配置及使用
