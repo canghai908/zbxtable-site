@@ -18,21 +18,21 @@ description: >
 CentOS 6.x x86_64
 
 ```
-rpm -Uvh hhttps://repo.cactifans.com/zbxtable/1.0/rhel/6/x86_64/zbxtable-release-1.0-1.el6.noarch.rpm
+rpm -Uvh https://repo.cactifans.com/zbxtable/1.0/rhel/6/x86_64/zbxtable-release-1.0-1.el6.noarch.rpm
 yum clean all
 ```
 
 CentOS 7.x x86_64
 
 ```
-rpm -Uvh hhttps://repo.cactifans.com/zbxtable/1.0/rhel/7/x86_64/zbxtable-release-1.0-1.el7.noarch.rpm
+rpm -Uvh https://repo.cactifans.com/zbxtable/1.0/rhel/7/x86_64/zbxtable-release-1.0-1.el7.noarch.rpm
 yum clean all
 ```
 
 CentOS 8.x x86_64
 
 ```
-rpm -Uvh hhttps://repo.cactifans.com/zbxtable/1.0/rhel/8/x86_64/zbxtable-release-1.0-1.el8.noarch.rpm
+rpm -Uvh https://repo.cactifans.com/zbxtable/1.0/rhel/8/x86_64/zbxtable-release-1.0-1.el8.noarch.rpm
 dnf clean all
 ```
 
