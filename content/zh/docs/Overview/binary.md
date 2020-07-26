@@ -1,7 +1,7 @@
 ---
-title: "RPM部署【推荐】"
-linkTitle: "RPM部署【推荐】"
-weight: 5
+title: "编译安装"
+linkTitle: "编译安装"
+weight: 6
 description: >
   使用RPM包方式部署ZbxTable
 ---
