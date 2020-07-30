@@ -60,6 +60,19 @@ yum install ms-agent -y
 
 ### Zbxtable 配置
 
+#### 数据库初始化
+
+按照以下命令创建数据库及用户
+
+```
+# mysql -uroot -p
+password
+mysql> create database zbxtable character set utf8 collate utf8_bin;
+mysql> create user zbxtable@localhost identified by 'zbxtablepwd123';
+mysql> grant all privileges on zbxtable.* to zbxtable@localhost;
+mysql> quit;
+```
+
 #### 修改配置文件
 
 配置文件在 conf/app.conf
@@ -94,7 +107,7 @@ token = ec573cf7388da56916f75ba9bbe46a69
 
 主要配置有以下
 
-- zabbix web info 为 访问 zabbix web 的地址及账号密码,**确保使用 zabbix_server 所配置的地址能打开 zabbix web 页面**
+- zabbix web info 为 访问 zabbix web 的地址及账号密码,**确保使用 zabbix_server 所配置的地址能打开 zabbix web 页面**，如果有/zabbix 后缀也需要添加
 - token 为 ms-agent 与 ZbxTable 平台通信的 token，可自行修改及配置,与 ms-agent 配置的 token 保持一致即可，具体可查看 ms-agent 文档https://github.com/canghai908/ms-agent
 
 #### 启动

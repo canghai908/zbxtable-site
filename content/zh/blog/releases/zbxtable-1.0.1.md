@@ -3,6 +3,7 @@ author: "canghai809"
 date: 2020-07-24 19:00:32
 title: "zbxtable 1.0.1"
 linkTitle: "zbxtable 1.0.1"
+url: /releases/zbxtable-1.0.1.html
 ---
 
 zbxtable 1.0.1 版本发布
