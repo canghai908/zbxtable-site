@@ -54,6 +54,13 @@ yum makecache -y
 yum install zbxtable -y
 ```
 
+**恢复之前备份的配置文件**，重启 zbxtable 服务
+
+```
+systemctl daemon-reload
+systemctl restart zbxtable
+```
+
 ## 文档
 
 帮助文档：[https://zbxtable.cactifans.com/docs/](https://zbxtable.cactifans.com/docs/)  
