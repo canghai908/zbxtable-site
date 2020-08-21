@@ -61,6 +61,18 @@ systemctl daemon-reload
 systemctl restart zbxtable
 ```
 
+查看版本信息
+
+```
+cd /usr/local/zbxtable/
+./zbxtable -v
+ZbxTable Version:=1.0.5
+Git Commit Hash:=f49671b4e85f9eb1c36fc5e448b2c54a9c829bbc
+UTC Build Time:=2020-08-18_04:27:38PM
+```
+
+确认升级成功
+
 ## 文档
 
 帮助文档：[https://zbxtable.cactifans.com/docs/](https://zbxtable.cactifans.com/docs/)  

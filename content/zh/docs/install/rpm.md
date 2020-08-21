@@ -8,7 +8,7 @@ description: >
 ---
 
 {{% pageinfo %}}
-推荐添加 Zbxtable 源进行系统的安装及更新
+推荐添加 Zbxtable 源进行系统的安装及更新。
 {{% /pageinfo %}}
 
 由于 ZbxTable 使用 Go 语言编写，无任何系统以来组建，建议使用 RPM 方式进行安装，推荐使用 ZbxTable 的 yum 源，可方便安装各个组件并可使用 yum update 对组件进行更新。
@@ -98,7 +98,7 @@ dbprefix = zbxtable_
 
 #zabbix web info
 zabbix_server = http://192.168.10.12
-zabbix_user = admin
+zabbix_user = Admin
 zabbix_pass = zabbix
 
 #alarm send token
@@ -107,7 +107,7 @@ token = ec573cf7388da56916f75ba9bbe46a69
 
 主要配置有以下
 
-- zabbix web info 为 访问 zabbix web 的地址及账号密码,**确保使用 zabbix_server 所配置的地址能打开 zabbix web 页面**，如果有/zabbix 后缀也需要添加
+- zabbix web info 为 访问 zabbix web 的地址及账号密码,**确保使用 zabbix_server 所配置的地址能使用浏览器访问 zabbix web 页面**，如果你的zabbix web访问地址为http://xxx.xxx.xxx.xx/zabbix 则这里也需要加后缀/zabbix，配置用户建议为Admin管理员用户，其他用户可能存在权限问题无法查看图形。
 - token 为 ms-agent 与 ZbxTable 平台通信的 token，可自行修改及配置,与 ms-agent 配置的 token 保持一致即可，具体可查看 ms-agent 文档https://github.com/canghai908/ms-agent
 
 #### 启动
@@ -123,6 +123,12 @@ systemctl enable --now zbxtable
 ```
 systemctl restart zbxtable
 ```
+查看服务状态
+
+```
+systemctl status zbxtable
+```
+一定要确保zbxtable服务是Active: active (running) 状态，如不是正常状态，建议查看日志/usr/local/zbxtable/logs/zbxtable.log
 
 #### Debug
 
