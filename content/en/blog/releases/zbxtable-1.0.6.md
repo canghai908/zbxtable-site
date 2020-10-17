@@ -3,7 +3,7 @@ author: "canghai809"
 date: 2020-09-03 10:00:32
 title: "zbxtable 1.0.6"
 linkTitle: "zbxtable 1.0.6"
-url: /releases/zbxtable-1.0.6.html
+url: /en/releases/zbxtable-1.0.6.html
 ---
 
 本次主要更新zbxtable后端程序版本到1.0.6版本，解决zabbix 4.4.10及4.4.13版本等特定版本图形显示异常问题。zbxtable前端程序到1.0.4,解决导出PDF问题。建议尽快升级。

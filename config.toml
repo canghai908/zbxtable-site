@@ -10,7 +10,7 @@ theme = ["docsy"]
 enableGitInfo = false
 
 # Language settings
-contentDir = "content/zh"
+contentDir = "content/en"
 defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = false
 # Useful when translating.
@@ -52,14 +52,22 @@ id = "UA-00000000-0"
 # Language configuration
 
 [languages]
-[languages.zh]
-contentDir = "content/zh"
+
+[languages.en]
 title = "ZbxTable"
-description = "ZbxTable"
+contentDir = "content/en"
+description = "ZbxTable website"
+languageName ="English"
+# Weight used for sorting.
+weight = 2
+
+[languages.zh]
+title = "ZbxTable"
+contentDir = "content/zh"
+description = "ZbxTable website"
 languageName ="中文"
 # Weight used for sorting.
 weight = 1
-
 
 [markup]
   [markup.goldmark]
