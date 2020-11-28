@@ -62,7 +62,8 @@ yum install ms-agent -y
 
 #### 数据库初始化
 
-按照以下命令创建数据库及用户
+按照以下命令创建数据库及用户，根据使用数据库类型选择执行
+mysql 数据库
 
 ```
 # mysql -uroot -p
@@ -71,6 +72,17 @@ mysql> create database zbxtable character set utf8 collate utf8_bin;
 mysql> create user zbxtable@localhost identified by 'zbxtablepwd123';
 mysql> grant all privileges on zbxtable.* to zbxtable@localhost;
 mysql> quit;
+```
+
+postgres 数据库
+
+```
+# su - postgres
+psql
+postgres=# create user zbxtable with password 'zbxtablepwd123';
+postgres=# create database zbxtable owner zbxtable;
+postgres=# grant all on database zbxtable to zbxtable;
+postgres=# \q
 ```
 
 #### 修改配置文件
@@ -85,19 +97,23 @@ runmode = prod
 autorender = false
 copyrequestbody = true
 EnableDocs = true
+
 #session过期时间，单位为小时，默认12小时。如需大屏自动刷新，建议配置较大配置时间
 session_timeout = 12
 
 #database
+#database type: mysql,postgres
+dbdriver = mysql
 hostname = localhost
 username = zbxtable
 dbpsword = zbxtablepwd123
 database = zbxtable
+#mysql: 3306 postgres:5432
 port = 3306
 dbprefix = zbxtable_
 
 #zabbix web info
-zabbix_server = http://192.168.10.12
+zabbix_web = http://192.168.10.12
 zabbix_user = Admin
 zabbix_pass = zabbix
 
@@ -107,7 +123,8 @@ token = ec573cf7388da56916f75ba9bbe46a69
 
 主要配置有以下
 
-- zabbix web info 为 访问 zabbix web 的地址及账号密码,**确保使用 zabbix_server 所配置的地址能使用浏览器访问 zabbix web 页面**，如果你的zabbix web访问地址为http://xxx.xxx.xxx.xx/zabbix 则这里也需要加后缀/zabbix，配置用户建议为Admin管理员用户，其他用户可能存在权限问题无法查看图形。
+- zabbix web info 为 访问 zabbix web 的地址及账号密码,**确保使用 zabbix_web 所配置的地址能使用浏览器访问 zabbix web 页面**，如果你的 zabbix web 访问地址为http://xxx.xxx.xxx.xx/zabbix 则这里也需要加后缀/zabbix，配置用户建议为 Admin 管理员用户，其他用户可能存在权限问题无法查看图形。
+- dbdriver 为 zbxtable 后端使用的数据库可使用 mysql 或 postgres
 - token 为 ms-agent 与 ZbxTable 平台通信的 token，可自行修改及配置,与 ms-agent 配置的 token 保持一致即可，具体可查看 ms-agent 文档https://github.com/canghai908/ms-agent
 
 #### 启动
@@ -123,12 +140,14 @@ systemctl enable --now zbxtable
 ```
 systemctl restart zbxtable
 ```
+
 查看服务状态
 
 ```
 systemctl status zbxtable
 ```
-一定要确保zbxtable服务是Active: active (running) 状态，如不是正常状态，建议查看日志/usr/local/zbxtable/logs/zbxtable.log
+
+一定要确保 zbxtable 服务是 Active: active (running) 状态，如不是正常状态，建议查看日志/usr/local/zbxtable/logs/zbxtable.log
 
 #### Debug
 
@@ -161,7 +180,7 @@ systemctl restart nginx
 systemctl enable  nginx
 ```
 
-使用http://ip:8088 即可访问系统，系统默认账号：admin 密码：Zbxtable
+使用 http://ip:8088 即可访问系统，系统默认账号：admin 密码：Zbxtable
 
 ### ms-agent 配置
 

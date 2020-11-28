@@ -6,14 +6,18 @@ linkTitle: "zbxtable 1.0.9"
 url: /en/releases/zbxtable-1.0.9.html
 ---
 
-ZbxTable 是一个开源的 Zabbix 报表系统.本次主要更新 zbxtable 后端程序版本到 1.0.9 版本，主要更新内容如下
+ZbxTable 是一个开源的 Zabbix 报表系统，官网：https://zbxtable.cactifans.com/  
+本次主要更新 zbxtable 后端程序版本到 1.0.9 版本，主要更新内容如下
 
 ## 更新内容
 
 **Bug 修复**
 
 - 修复 1.0.8 版本在 zabbix 5.2 版本下 ms-agent 用户权限问题
-- 支持 postgresql 作为后端数据库，可在配置文件里进行切换
+
+**新特性**
+
+- 支持 PosgreSQL 作为后端数据库，可在配置文件里进行切换
 - 告警历史查询及导出按照发生时间降序输出显示
 
 ## 安装方式
