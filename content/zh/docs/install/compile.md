@@ -8,7 +8,7 @@ description: >
 ---
 
 {{% pageinfo %}}
-介绍使用编译方式安装 zbxtable
+介绍使用编译方式安装 zbxtable.最新版本为 1.0.9
 {{% /pageinfo %}}
 
 ## 说明
@@ -17,6 +17,13 @@ zbxtable 及 ms-agent 为 go 语言编写，编译需要配置 go 语言环境�
 
 ## go 语言编译环境配置
 
+如果没有 go 语言环境，可以直接下载我编译好的二进制文件，下载地址
+
+```
+https://dl.cactifans.com/zbxtable/zbxtable-1.0.9.tar.gz
+```
+
+下载后直接跳到安装部份
 配置 go 编译环境，下载并配置 go 语言编译环境
 
 ```bash
@@ -86,15 +93,15 @@ cd zbxtable
 ./control pack
 ```
 
-编译后会生成 zbxtable-1.0.1.tar.gz,可用于部署。
+编译后会生成 zbxtable-1.0.9.tar.gz,可用于部署。
 
 ### 安装
 
 解压到/usr/local 目录下
 
 ```
-tar zxvf zbxtable-1.0.1.tar.gz -C /usr/local
-mv /usr/local/zbxtable-1.0.1 /usr/local/zbxtable
+tar zxvf zbxtable-1.0.9.tar.gz -C /usr/local
+mv /usr/local/zbxtable-1.0.9 /usr/local/zbxtable
 ```
 
 拷贝启动脚本  
@@ -116,12 +123,20 @@ cp /usr/local/zbxtable/zbxtable.service /lib/systemd/system/
 
 ## zbxtable-web
 
-此组件编译打包需要 node 环境。  
+如果没有 npm 环境，可直接下载已经打包好的
+
+```
+https://dl.cactifans.com/zbxtable/web.tar.gz
+```
+
+下载后解压到/usr/local/zbxtable 目录即可。
+如果从源码编译打包需要 node 环境。  
 环境：nodejs>10  
 构建
 
 ```
-git clone https://github.com/canghai908/zbxtable-web.git`
+git clone https://github.com/canghai908/zbxtable-web.git
+cd zbxtable-web
 npm i
 npm run build
 ```
