@@ -7,7 +7,6 @@ url: /releases/zbxtable-1.1.0.html
 ---
 ZbxTable 是一个开源的 Zabbix 报表系统.本次主要更新 zbxtable 后端程序版本到 1.1.0 版本，主要更新内容如下
 
-## V1.1.0版本更新内容
 **新特性**
 
 - 前端国际化支持
@@ -18,11 +17,11 @@ ZbxTable 是一个开源的 Zabbix 报表系统.本次主要更新 zbxtable 后�
 - 告警字段增加到16个
 
 
-**Bug 修复**
+**Bug修复**
 
 - 修复首页问题统计错误
 - 修复导出文件名中文乱码问题
-- 修复告警统计中文乱码
+- 修复告警统计规则
 
 ## 安装方式
 
@@ -87,7 +86,7 @@ Zabbix Password: zabbix
 ✔ Yes
 The configuration file ./conf/app.conf is generated successfully!
 ```
-### 配置MS-Agent
+#### 配置MS-Agent
 MS-Agent为告警消息采集客户端，采集zabbix产生的告警信息，并发送到ZbxTable平台，zbxtable需要在zabbix server上配置对应的Action等。配置步骤如下
 ```
 cd /usr/local/zbxtable/
