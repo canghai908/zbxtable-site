@@ -3,7 +3,7 @@ author: "canghai809"
 date: 2020-11-26 01:00:32
 title: "zbxtable 1.0.8"
 linkTitle: "zbxtable 1.0.8"
-url: /en/releases/zbxtable-1.0.8.html
+url: /releases/zbxtable-1.0.8.html
 ---
 
 本次主要更新 zbxtable 后端程序版本到 1.0.8 版本，主要更新内容如下

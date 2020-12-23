@@ -3,7 +3,7 @@ author: "canghai809"
 date: 2020-12-23 12:00:32
 title: "zbxtable 1.1.0"
 linkTitle: "zbxtable 1.1.0"
-url: /en/releases/zbxtable-1.1.0.html
+url: /releases/zbxtable-1.1.0.html
 ---
 ZbxTable 是一个开源的 Zabbix 报表系统.本次主要更新 zbxtable 后端程序版本到 1.1.0 版本，主要更新内容如下
 

@@ -3,7 +3,7 @@ author: "canghai809"
 date: 2020-12-23 11:00:32
 title: "ms-agent 1.0.5"
 linkTitle: "ms-agent 1.0.5"
-url: /en/releases/ms-agent-1.0.5.html
+url: /releases/ms-agent-1.0.5.html
 ---
 Ms-Agent 是一个开源的zabbix告警消息组件，需要安装到Zabbix Server上，采集Zabbix的告警信息并发送到ZbxTable平台
 
