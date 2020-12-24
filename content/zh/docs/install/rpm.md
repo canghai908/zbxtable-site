@@ -8,7 +8,7 @@ description: >
 ---
 
 {{% pageinfo %}}
-推荐添加 Zbxtable 源进行系统的安装及更新。
+ZbxTable 最新版本 1.1.0
 {{% /pageinfo %}}
 
 由于 ZbxTable 使用 Go 语言编写，无任何系统以来组建，建议使用 RPM 方式进行安装，推荐使用 ZbxTable 的 yum 源，可方便安装各个组件并可使用 yum update 对组件进行更新。
@@ -58,7 +58,7 @@ yum install ms-agent -y
 
 ## 配置
 
-### Zbxtable 配置
+### ZbxTable 配置
 
 #### 数据库初始化
 
@@ -85,48 +85,27 @@ postgres=# grant all on database zbxtable to zbxtable;
 postgres=# \q
 ```
 
-#### 修改配置文件
-
-配置文件在 conf/app.conf
-
+#### 系统初始化
+新版本配置文件需要手动生成，生成步骤如下:
 ```
-#zbxtable
-appname = zbxtable
-httpport = 8084
-runmode = prod
-autorender = false
-copyrequestbody = true
-EnableDocs = true
-
-#session过期时间，单位为小时，默认12小时。如需大屏自动刷新，建议配置较大配置时间
-session_timeout = 12
-
-#database
-#database type: mysql,postgres
-dbdriver = mysql
-hostname = localhost
-username = zbxtable
-dbpsword = zbxtablepwd123
-database = zbxtable
-#mysql: 3306 postgres:5432
-port = 3306
-dbprefix = zbxtable_
-
-#zabbix web info
-zabbix_web = http://192.168.10.12
-zabbix_user = Admin
-zabbix_pass = zabbix
-
-#alarm send token
-token = ec573cf7388da56916f75ba9bbe46a69
+cd /usr/local/zbxtable/
+./zbxtable init
 ```
+会进入交互式命令行，根据实际情况输入数据库账号及密码，以及zabbix连接信息，最后确认即可生成配置文件。如数据库及zabbix连接错误，会要求重新输入连接信息，否则无法生成配置文件。
 
-主要配置有以下
+[![asciicast](https://asciinema.org/a/8a8ejNzObhUZujYJ1CaZ0yRR7.svg)](https://asciinema.org/a/8a8ejNzObhUZujYJ1CaZ0yRR7)
 
-- zabbix web info 为 访问 zabbix web 的地址及账号密码,**确保使用 zabbix_web 所配置的地址能使用浏览器访问 zabbix web 页面**，如果你的 zabbix web 访问地址为http://xxx.xxx.xxx.xx/zabbix 则这里也需要加后缀/zabbix，配置用户建议为 Admin 管理员用户，其他用户可能存在权限问题无法查看图形。
-- dbdriver 为 zbxtable 后端使用的数据库可使用 mysql 或 postgres
-- token 为 ms-agent 与 ZbxTable 平台通信的 token，可自行修改及配置,与 ms-agent 配置的 token 保持一致即可，具体可查看 ms-agent 文档https://github.com/canghai908/ms-agent
+#### 配置MS-Agent
+MS-Agent为告警消息采集客户端，采集zabbix产生的告警信息，并发送到ZbxTable平台，zbxtable需要在zabbix server上配置对应的Action等。配置步骤如下
+```
+cd /usr/local/zbxtable/
+./zbxtable install
+```
+执行后会根据之前提供的zabbix信息，配置action，过程如下。
+[![asciicast](https://asciinema.org/a/jz68MHVjyV0AfyAY6bKtycfSW.svg)](https://asciinema.org/a/jz68MHVjyV0AfyAY6bKtycfSW)
 
+会自动在zabbix上建立一个ms-agent用户，密码为随机，权限为管理员。最后输出MS-Agent token为MS-Agent 与ZbxTable通信的token，需要和MS-Agent 配置文件里的token保持一致，否则无法正常收到告警。 
+Token可在conf/app.conf文件里找到。   
 #### 启动
 
 修改好配置后，使用以下命令启动
@@ -147,7 +126,7 @@ systemctl restart zbxtable
 systemctl status zbxtable
 ```
 
-一定要确保 zbxtable 服务是 Active: active (running) 状态，如不是正常状态，建议查看日志/usr/local/zbxtable/logs/zbxtable.log
+一定要确保 zbxtable 服务是 Active: active (running) 状态，如不是正常状态，建议查看日志/usr/local/zbxtable/logs/zbxtable.log或者系统/var/log/message日志
 
 #### Debug
 
@@ -186,30 +165,7 @@ systemctl enable  nginx
 
 #### 初始化配置
 
-ms-agent 需使用 zbxtable 命令完成在 Zabbix Server 的配置,包括创建用户,配置动作等配置。配置过程如下,确保 ZbxTable 配置文件里的 Zabbix Server 信息配置正确
-
-```
-cd /usr/local/zbxtable
-./zbxtable install
-```
-
-显示如下日志
-
-```
-2020/07/18 23:22:16.881 [I] [install.go:43]  Zabbix API Address: http://zabbix-server/api_jsonrpc.php
-2020/07/18 23:22:16.881 [I] [install.go:44]  Zabbix Admin User: Admin
-2020/07/18 23:22:16.881 [I] [install.go:45]  Zabbix Admin Password: xxxxx
-2020/07/18 23:22:17.716 [I] [install.go:52]  登录zabbix平台成功!
-2020/07/18 23:22:17.879 [I] [install.go:69]  创建告警媒介成功!
-2020/07/18 23:22:18.027 [I] [install.go:82]  创建告警用户组成功!
-2020/07/18 23:22:18.198 [I] [install.go:113]  创建告警用户成功!
-2020/07/18 23:22:18.198 [I] [install.go:114]  用户名:ms-agent
-2020/07/18 23:22:18.198 [I] [install.go:115]  密码:xxxx
-2020/07/18 23:22:18.366 [I] [install.go:167]  创建告警动作成功!
-2020/07/18 23:22:18.366 [I] [install.go:168]  插件安装完成!
-```
-
-表示配置成功.此步骤会在 Zabbix Server 创建 ms-agent，密码为随机，并配置相关 Action 和 Media Type，并关联到用户.
+ms-agent 需使用 zbxtable 命令完成在 Zabbix Server 的配置,确保已配置成功。
 
 #### 环境信息
 
@@ -222,9 +178,10 @@ cd /usr/local/zbxtable
 
 如果你的 Zabbix Server 的 alertscripts 目录不为/usr/lib/zabbix/alertscripts/ 需要移动 ms-agen 到你的 zabbix server 的 alertscripts 目录下即可,否则会在 Zabbix 告警页面出现找不到 ms-agent 的错误提示，也无法收到告警消息。
 也可以修改 Zabbix Server 的配置文件，将 alertscripts 目录指向/usr/lib/zabbix/alertscripts/
-
+```
 vi zabbix_server.conf
-
+```
+修改如下配置为
 ```
 AlertScriptsPath=/usr/lib/zabbix/alertscripts
 ```
@@ -237,10 +194,11 @@ AlertScriptsPath=/usr/lib/zabbix/alertscripts
 
 ```
 [app]
-Debug = 1
+Debug = 0
+TenantID = zabbix01
 LogSavePath = /tmp
 Host = http://192.168.10.10:8088/v1/receive
-Token = ec573cf7388da56916f75ba9bbe46a69
+Token = 2d7a7ab0b0be493ab0bb9a925e4a30d2
 ```
 
 Debug 为程序日志级别 0 是 debug，1 为 info
