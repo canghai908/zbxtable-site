@@ -44,6 +44,7 @@ cd /usr/local/zbxtable/
 表示升级Action成功。
 重启ZbxTable
 ```
+systemctl daemon-reload
 systemctl restart zbxtable
 ```
 ## 源码
