@@ -35,9 +35,8 @@ CentOS 8.x x86_64
 rpm -Uvh https://repo.cactifans.com/zbxtable/1.0/rhel/8/x86_64/zbxtable-release-1.0-1.el8.noarch.rpm
 dnf clean all
 ```
-
 ## 安装
-
+如果是全新安装，可按照以下步骤进行
 安装 Zbxtable
 
 ```
@@ -86,6 +85,7 @@ postgres=# \q
 ```
 
 #### 系统初始化
+
 新版本配置文件需要手动生成，生成步骤如下:
 ```
 cd /usr/local/zbxtable/
@@ -94,7 +94,6 @@ cd /usr/local/zbxtable/
 会进入交互式命令行，根据实际情况输入数据库账号及密码，以及zabbix连接信息，最后确认即可生成配置文件。如数据库及zabbix连接错误，会要求重新输入连接信息，否则无法生成配置文件。
 
 [![asciicast](https://asciinema.org/a/8a8ejNzObhUZujYJ1CaZ0yRR7.svg)](https://asciinema.org/a/8a8ejNzObhUZujYJ1CaZ0yRR7)
-
 #### 配置MS-Agent
 MS-Agent为告警消息采集客户端，采集zabbix产生的告警信息，并发送到ZbxTable平台，zbxtable需要在zabbix server上配置对应的Action等。配置步骤如下
 ```

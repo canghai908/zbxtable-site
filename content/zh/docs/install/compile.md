@@ -8,19 +8,19 @@ description: >
 ---
 
 {{% pageinfo %}}
-介绍使用编译方式安装 zbxtable.最新版本为 1.0.9
+介绍使用编译方式安装 zbxtable.最新版本为 1.1.0
 {{% /pageinfo %}}
 
 ## 说明
 
-zbxtable 及 ms-agent 为 go 语言编写，编译需要配置 go 语言环境。zbxtable-web 为 React 编译需要使用 node 环境。
+zbxtable 及 ms-agent 为 go 语言编写，编译需要配置 go 语言环境。zbxtable-web 为 React 编译需要使用 node 环境。编译安装适用于*nux系统
 
 ## go 语言编译环境配置
 
 如果没有 go 语言环境，可以直接下载我编译好的二进制文件，下载地址
 
 ```
-https://dl.cactifans.com/zbxtable/zbxtable-1.0.9.tar.gz
+https://dl.cactifans.com/zbxtable/zbxtable-1.1.0.tar.gz
 ```
 
 下载后直接跳到安装部份
@@ -93,14 +93,14 @@ cd zbxtable
 ./control pack
 ```
 
-编译后会生成 zbxtable-1.0.9.tar.gz,可用于部署。
+编译后会生成 zbxtable-1.1.0.tar.gz,可用于部署。
 
 ### 安装
 
 解压到/usr/local 目录下
 
 ```
-tar zxvf zbxtable-1.0.9.tar.gz -C /usr/local
+tar zxvf zbxtable-1.1.0.tar.gz -C /usr/local
 mv /usr/local/zbxtable-1.0.9 /usr/local/zbxtable
 ```
 
@@ -160,14 +160,14 @@ cd ms-agent
 ./control pack
 ```
 
-编译之后会生成 ms-agent-1.0.1.tar.gz 打包文件，上传到 zabbix server
+编译之后会生成 ms-agent-1.0.3.tar.gz 打包文件，上传到 zabbix server
 
 ### 安装
 
 解压
 
 ```
-tar zxvf ms-agent-1.0.1.tar.gz
+tar zxvf ms-agent-1.0.3.tar.gz
 ```
 
 解压之后生成一个 ms-agent 二进制文件,一个 app.ini 配置文件。
@@ -189,7 +189,7 @@ cp ms-agent-1.0.1/ms-agent /usr/lib/zabbix/alertscripts/
 
 ```
 mkdir /etc/ms-agent
-cp ms-agent-1.0.1/app.ini /etc/ms-agent/
+cp ms-agent-1.0.3/app.ini /etc/ms-agent/
 ```
 
 至此完成基本安装
