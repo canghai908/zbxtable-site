@@ -9,7 +9,7 @@ ZbxTable 是一个开源的 Zabbix 报表系统.本次主要更新 zbxtable 后�
 
 **新特性**
 
-- 打包前端文件到二进制文件,初始化时自动释放.不再独立发布ZbxTable-Web的rpm包
+- 打包前端文件到二进制文件，初始化时自动释放，不需要独立安装zbxtable-web组件
 
 **Bug修复**
 
@@ -17,7 +17,7 @@ ZbxTable 是一个开源的 Zabbix 报表系统.本次主要更新 zbxtable 后�
 
 
 ## 全新安装
-配置[RPM 包安装配置](/docs/install/rpm/)
+全新安装可查看安装文档[RPM 包安装配置](https://zbxtable.cactifans.com/docs/install/rpm/)
 
 ## 升级
 
@@ -26,6 +26,7 @@ ZbxTable 是一个开源的 Zabbix 报表系统.本次主要更新 zbxtable 后�
 yum makecache -y
 yum update zbxtable -y
 ```
+可完成对zbxtable版本升级。
 由于老版本Action格式问题，特殊字符可造成告警无法入库情况，需升级Action。操作如下
 ```
 cd /usr/local/zbxtable/
@@ -40,13 +41,19 @@ cd /usr/local/zbxtable/
 2020/12/23 18:52:16.476 [I] [updateaction.go:61]  Zabbix version is 4.2.5
 2020/12/23 18:52:16.806 [I] [app.go:528]  Update MS-Agent Action successed
 ```
-表示升级成功。
-启动ZbxTable
+表示升级Action成功。
+重启ZbxTable
 ```
-systemctl start zbxtable
+systemctl restart zbxtable
 ```
+## 源码
+https://github.com/canghai908/zbxtable
+
 ## 文档
 
 帮助文档：[https://zbxtable.cactifans.com/docs/](https://zbxtable.cactifans.com/docs/)      
-发布公告：[https://zbxtable.cactifans.com/blog/releases/](https://zbxtable.cactifans.com/blog/releases/)    
+发布公告：[https://zbxtable.cactifans.com/blog/releases/](https://zbxtable.cactifans.com/blog/releases/) 
+FAQ:   [https://zbxtable.cactifans.com/docs/faq/faq/](https://zbxtable.cactifans.com/docs/faq/faq/)
 
+## 反馈
+https://github.com/canghai908/zbxtable/issues
