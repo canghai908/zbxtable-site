@@ -8,7 +8,7 @@ description: >
 ---
 
 {{% pageinfo %}}
-ZbxTable 最新版本 1.1.0
+ZbxTable 最新版本 1.1.1
 {{% /pageinfo %}}
 ## 升级ZbxTable
 

@@ -8,7 +8,7 @@ description: >
 ---
 
 {{% pageinfo %}}
-介绍使用编译方式安装 zbxtable.最新版本为 1.1.0
+介绍使用编译方式安装 zbxtable.最新版本为 1.1.1
 {{% /pageinfo %}}
 
 ## 说明

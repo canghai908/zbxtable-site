@@ -8,7 +8,7 @@ description: >
 ---
 
 {{% pageinfo %}}
-ZbxTable 最新版本 1.1.0
+ZbxTable 最新版本 1.1.1
 {{% /pageinfo %}}
 
 由于 ZbxTable 使用 Go 语言编写，无任何系统以来组建，建议使用 RPM 方式进行安装，推荐使用 ZbxTable 的 yum 源，可方便安装各个组件并可使用 yum update 对组件进行更新。
