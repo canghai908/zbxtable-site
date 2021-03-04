@@ -8,7 +8,7 @@ description: >
 ---
 
 {{% pageinfo %}}
-ZbxTable 最新版本 1.1.1
+ZbxTable 最新版本 1.1.2
 {{% /pageinfo %}}
 
 由于 ZbxTable 使用 Go 语言编写，无任何系统以来组建，建议使用 RPM 方式进行安装，推荐使用 ZbxTable 的 yum 源，可方便安装各个组件并可使用 yum update 对组件进行更新。
@@ -41,12 +41,6 @@ dnf clean all
 
 ```
 yum install zbxtable -y
-```
-
-安装 Zbxtable-Web
-
-```
-yum install zbxtable-web -y
 ```
 
 安装 ms-agent
@@ -132,10 +126,7 @@ systemctl status zbxtable
 如启动失败或者出现错误错误，可修改通过需改程序配置文件,修改运行模式为 dev 模式,并重启 zbxtable,查看程序日志解决,日志位于 logs/zbxtable.log
 
 ### Zbxtable-Web 配置
-
-安装好之后文件位于/usr/local/zbxtable/web
-前端为纯静态文件，需使用 nginx，如机器未安装 nginx，使用以下命令安装 nginx
-
+Zbxtable Web需使用nginx
 ```
 yum install nginx -y
 ```

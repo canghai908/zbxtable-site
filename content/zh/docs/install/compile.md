@@ -8,7 +8,7 @@ description: >
 ---
 
 {{% pageinfo %}}
-介绍使用编译方式安装 zbxtable.最新版本为 1.1.1
+介绍使用编译方式安装 zbxtable.最新版本为 1.1.2
 {{% /pageinfo %}}
 
 ## 说明
@@ -20,7 +20,7 @@ zbxtable 及 ms-agent 为 go 语言编写，编译需要配置 go 语言环境�
 如果没有 go 语言环境，可以直接下载我编译好的二进制文件，下载地址
 
 ```
-https://dl.cactifans.com/zbxtable/zbxtable-1.1.0.tar.gz
+https://dl.cactifans.com/zbxtable/zbxtable-1.1.2.tar.gz
 ```
 
 下载后直接跳到安装部份
@@ -93,15 +93,15 @@ cd zbxtable
 ./control pack
 ```
 
-编译后会生成 zbxtable-1.1.0.tar.gz,可用于部署。
+编译后会生成 zbxtable-1.1.2.tar.gz,可用于部署。
 
 ### 安装
 
 解压到/usr/local 目录下
 
 ```
-tar zxvf zbxtable-1.1.0.tar.gz -C /usr/local
-mv /usr/local/zbxtable-1.0.9 /usr/local/zbxtable
+tar zxvf zbxtable-1.1.2.tar.gz -C /usr/local
+mv /usr/local/zbxtable-1.1.2 /usr/local/zbxtable
 ```
 
 拷贝启动脚本  
