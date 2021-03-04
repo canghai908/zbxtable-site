@@ -49,7 +49,7 @@ https://github.com/canghai908/zbxtable
 ## 文档
 
 帮助文档：[https://zbxtable.cactifans.com/docs/](https://zbxtable.cactifans.com/docs/)      
-发布公告：[https://zbxtable.cactifans.com/blog/releases/](https://zbxtable.cactifans.com/blog/releases/) 
+发布公告：[https://zbxtable.cactifans.com/blog/releases/](https://zbxtable.cactifans.com/blog/releases/)    
 FAQ:   [https://zbxtable.cactifans.com/docs/faq/faq/](https://zbxtable.cactifans.com/docs/faq/faq/)
 
 ## 反馈
