@@ -8,7 +8,7 @@ description: >
 ---
 
 {{% pageinfo %}}
-ZbxTable 最新版本 1.1.1
+ZbxTable 最新版本 1.1.2
 {{% /pageinfo %}}
 ## 升级ZbxTable
 
@@ -53,16 +53,10 @@ systemctl start zbxtable
 ```
 即可完成ZbxTable平台的升级
 # Zbxtable-Web升级
-Zbxtable-Web为ZbxTable前端页面，新版本已支持国际化，建议升级。
-```
-yum makecache -y
-yum update zbxtable-web -y
-```
+新版本web已包含在zbxtable里，启动时自动释放到程序所谓目录的web目录下。
 前端更新后强制刷新浏览器即可。
 # MS-Asgent升级
-Zbxtable-Web为ZbxTable前端页面，新版本已支持国际化，建议升级。
 ```
 yum makecache -y
-yum update zbxtable-web -y
+yum update ms-agent -y
 ```
-前端更新后强制刷新浏览器即可。

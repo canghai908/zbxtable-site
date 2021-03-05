@@ -13,7 +13,20 @@ description: >
 
 ## 说明
 
-zbxtable 及 ms-agent 为 go 语言编写，编译需要配置 go 语言环境。zbxtable-web 为 React 编译需要使用 node 环境。编译安装适用于*nux系统
+zbxtable 及 ms-agent 为 go 语言编写，编译需要配置 go 语言环境。zbxtable-web 为 React 编译需要使用 node 环境。 编译安装适用于*nux系统    
+从1.1.2版本开始前端web页面会打包进zbxtable二进制文件，启动时自动释放到程序当前所在的web目录，因此需要首先编译zbxtable-web前端文件
+## zbxtable-web
+源码编译打包需要 node 环境。  
+环境：nodejs>10  
+构建
+
+```
+git clone https://github.com/canghai908/zbxtable-web.git
+cd zbxtable-web
+npm i
+npm run build
+```
+此过程较长，请耐心等待，打包后，生成的文件在 app/build 目录下。
 
 ## go 语言编译环境配置
 
@@ -89,6 +102,11 @@ mkdir -p $GOPATH/src/github.com/canghai908
 cd $GOPATH/src/github.com/canghai908
 git clone https://github.com/canghai908/zbxtable.git
 cd zbxtable
+```
+拷贝之前编译好的前端文件到 web目录
+```
+mkdir -p web
+cp -r zbxtable-web/app/build/* web/
 ./control build
 ./control pack
 ```
@@ -120,28 +138,6 @@ cp /usr/local/zbxtable/zbxtable.service /lib/systemd/system/
 ### 配置
 
 配置及启动参考[RPM 包安装配置](/docs/install/rpm/#zbxtable-配置)
-
-## zbxtable-web
-
-如果没有 npm 环境，可直接下载已经打包好的
-
-```
-https://dl.cactifans.com/zbxtable/web.tar.gz
-```
-
-下载后解压到/usr/local/zbxtable 目录即可。
-如果从源码编译打包需要 node 环境。  
-环境：nodejs>10  
-构建
-
-```
-git clone https://github.com/canghai908/zbxtable-web.git
-cd zbxtable-web
-npm i
-npm run build
-```
-
-此过程较长，请耐心等待，打包后，生成的文件在 app/build 目录下。安装配置 nginx 之后拷贝到 web 目录即可。
 
 ## ms-agent
 
