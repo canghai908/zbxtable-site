@@ -1,10 +1,10 @@
 ---
 title: "FAQ"
 linkTitle: "FAQ"
-weight: 5
+weight: 3
 menu:
   main:
-    weight: 5
+    weight: 3
 ---
 
 {{% pageinfo %}}

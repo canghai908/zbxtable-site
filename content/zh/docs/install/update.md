@@ -4,33 +4,29 @@ linkTitle: "升级"
 weight: 5
 date: 2020-07-24 19:00:32
 description: >
-  介绍从1.1.0之前版本升级到新版本
+  zbxtable版本升级
 ---
 
 {{% pageinfo %}}
-ZbxTable 最新版本 1.1.2
+ZbxTable 目前最新版本 1.1.3
 {{% /pageinfo %}}
 ## 升级ZbxTable
 
-如果已安装ZbxTable的版本小于1.1.0版本，则需要按照以下步骤进行升级
+使用yum升级zbxtable
 ```
 yum makecache -y
 yum update zbxtable -y
 ```
-安装完成后，新版本配置文件与老版本配置文件有差异，需先升级配置文件到最新版本
-#### 升级配置文件
+升级完成。
+
+### 生成配置文件
+
+按引导生成配置文件即可
 ```
 cd /usr/local/zbxtable/
-./zbxtable uc
+./zbxtable init
 ```
-输入如下，表示配置文件升级成功
-```
-2020/12/23 19:31:21.349 [I] [app.go:528]  Start upgrading the old configuration file!
-2020/12/23 19:31:21.355 [I] [updateconf.go:39]  Connected to database zbxtable successfully!
-2020/12/23 19:31:21.617 [I] [updateconf.go:39]  Connected to zabbix web successfully！Zabbix version is : 4.2.5
-2020/12/23 19:31:21.617 [I] [app.go:528]  Successfully upgraded the old configuration file!
-```
-表示升级成功。
+
 #### 升级Action告警内容
 由于新版本对告警结构体发生了变化，因此需要更新在zabbix上的action内容，更新步骤如下
 ```

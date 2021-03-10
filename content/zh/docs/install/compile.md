@@ -8,13 +8,13 @@ description: >
 ---
 
 {{% pageinfo %}}
-介绍使用编译方式安装 zbxtable.最新版本为 1.1.2
+介绍使用编译方式安装 zbxtable.最新版本为 1.1.3
 {{% /pageinfo %}}
 
 ## 说明
 
 zbxtable 及 ms-agent 为 go 语言编写，编译需要配置 go 语言环境。zbxtable-web 为 React 编译需要使用 node 环境。 编译安装适用于*nux系统    
-从1.1.2版本开始前端web页面会打包进zbxtable二进制文件，启动时自动释放到程序当前所在的web目录，因此需要首先编译zbxtable-web前端文件
+从1.1.3版本开始前端web页面会打包进zbxtable二进制文件，启动时自动释放到程序当前所在的web目录，因此需要首先编译zbxtable-web前端文件
 ## zbxtable-web
 源码编译打包需要 node 环境。  
 环境：nodejs>10  
@@ -33,7 +33,7 @@ npm run build
 如果没有 go 语言环境，可以直接下载我编译好的二进制文件，下载地址
 
 ```
-https://dl.cactifans.com/zbxtable/zbxtable-1.1.2.tar.gz
+https://dl.cactifans.com/zbxtable/zbxtable-1.1.3.tar.gz
 ```
 
 下载后直接跳到安装部份
@@ -111,15 +111,15 @@ cp -r zbxtable-web/app/build/* web/
 ./control pack
 ```
 
-编译后会生成 zbxtable-1.1.2.tar.gz,可用于部署。
+编译后会生成 zbxtable-1.1.3.tar.gz,可用于部署。
 
 ### 安装
 
 解压到/usr/local 目录下
 
 ```
-tar zxvf zbxtable-1.1.2.tar.gz -C /usr/local
-mv /usr/local/zbxtable-1.1.2 /usr/local/zbxtable
+tar zxvf zbxtable-1.1.3.tar.gz -C /usr/local
+mv /usr/local/zbxtable-1.1.3 /usr/local/zbxtable
 ```
 
 拷贝启动脚本  

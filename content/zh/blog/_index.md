@@ -3,7 +3,7 @@ title: "技术文档"
 linkTitle: "技术文档"
 menu:
   main:
-    weight: 40
+    weight: 2
 ---
 
 This is the **blog** section. It has two categories: News and Releases.

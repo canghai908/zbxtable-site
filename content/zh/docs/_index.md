@@ -1,10 +1,10 @@
 ---
 title: "使用文档"
 linkTitle: "使用文档"
-weight: 2
+weight: 1
 menu:
   main:
-    weight: 2
+    weight: 1
 ---
 
 {{% pageinfo %}}
