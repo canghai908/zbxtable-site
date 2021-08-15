@@ -8,7 +8,7 @@ description: >
 ---
 
 {{% pageinfo %}}
-ZbxTable 目前最新版本 1.1.3
+ZbxTable 目前最新版本 1.1.5
 {{% /pageinfo %}}
 ## 升级ZbxTable
 
@@ -28,6 +28,7 @@ cd /usr/local/zbxtable/
 ```
 
 #### 升级Action告警内容
+如果你的版本小于1.1.3版本之前需要升级,
 由于新版本对告警结构体发生了变化，因此需要更新在zabbix上的action内容，更新步骤如下
 ```
 cd /usr/local/zbxtable/
