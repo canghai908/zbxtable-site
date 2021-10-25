@@ -14,7 +14,13 @@ description: >
 ## 说明
 
 zbxtable 及 ms-agent 为 go 语言编写，编译需要配置 go 语言环境。zbxtable-web 为 React 编译需要使用 node 环境。 编译安装适用于*nux系统    
-从1.1.5版本开始前端web页面会打包进zbxtable二进制文件，启动时自动释放到程序当前所在的web目录，因此需要首先编译zbxtable-web前端文件
+从1.1.5版本开始前端web页面会打包进zbxtable二进制文件，启动时自动释放到程序当前所在的web目录，因此需要首先编译zbxtable-web前端文件.
+建议新手直接使用打包好的文件即可，适用于在Ubuntu,debina等系统上进行安装。
+二进制文件下载：
+```
+https://dl.cactifans.com/zbxtable/zbxtable-1.1.5.tar.gz
+```
+
 ## zbxtable-web
 源码编译打包需要 node 环境。  
 环境：nodejs>10  
